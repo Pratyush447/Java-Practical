@@ -1,46 +1,34 @@
+
 class Person {
-    protected String name;
+    String name = "Rahul";
 
-    public Person(String name) {
-        this.name = name;
-    }
-
-    public void introduce() {
+    void showPerson() {
         System.out.println("Name: " + name);
     }
 }
 
 class Employee extends Person {
-    protected int employeeId;
+    int empId = 101;
 
-    public Employee(String name, int employeeId) {
-        super(name);
-        this.employeeId = employeeId;
-    }
-
-    public void showEmployeeDetails() {
-        System.out.println("Employee ID: " + employeeId);
+    void showEmployee() {
+        System.out.println("Employee ID: " + empId);
     }
 }
 
 class Manager extends Employee {
-    private String department;
+    String department = "IT";
 
-    public Manager(String name, int employeeId, String department) {
-        super(name, employeeId);
-        this.department = department;
-    }
-
-    public void showManagerDetails() {
+    void showManager() {
         System.out.println("Department: " + department);
     }
 }
 
-public class MultilevelInheritanceDemo {
+public class Main {
     public static void main(String[] args) {
-        Manager manager = new Manager("Jordan Lee", 204, "Engineering");
-        manager.introduce();
-        manager.showEmployeeDetails();
-        manager.showManagerDetails();
+        Manager m = new Manager();
+
+        m.showPerson();
+        m.showEmployee();
+        m.showManager();
     }
 }
